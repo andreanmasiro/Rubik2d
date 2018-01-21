@@ -64,7 +64,7 @@ public class FaceNode: SKNode {
         
         if let index = stickers.index(of: sticker) {
            
-            let row = index / 3
+            let row = index/3
             let column = index % 3
             
             return (row, column)

@@ -64,13 +64,13 @@ extension CGSize {
 }
 
 extension UIColor {
-    
-    static let cubeFront: UIColor = .init(colorLiteralRed: 0, green: 170/255, blue: 0, alpha: 1)
-    static let cubeRight: UIColor = .init(colorLiteralRed: 180/255, green: 0, blue: 0, alpha: 1)
-    static let cubeTop: UIColor = .white
-    static let cubeBack: UIColor = .init(colorLiteralRed: 30/255, green: 30/255, blue: 180/255, alpha: 1)
-    static let cubeLeft: UIColor = .init(colorLiteralRed: 255/255, green: 140/255, blue: 0, alpha: 1)
-    static let cubeBottom: UIColor = .init(colorLiteralRed: 255/255, green: 250/255, blue: 0, alpha: 1)
+  
+    static let cubeFront: UIColor = #colorLiteral(red: 0, green: 0.6666666667, blue: 0, alpha: 1)
+    static let cubeRight: UIColor = #colorLiteral(red: 0.7058823529, green: 0, blue: 0, alpha: 1)
+    static let cubeTop: UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    static let cubeBack: UIColor = #colorLiteral(red: 0.1176470588, green: 0.1176470588, blue: 0.7058823529, alpha: 1)
+    static let cubeLeft: UIColor = #colorLiteral(red: 1, green: 0.5490196078, blue: 0, alpha: 1)
+    static let cubeBottom: UIColor = #colorLiteral(red: 1, green: 0.9803921569, blue: 0, alpha: 1)
 }
 
 extension Array {

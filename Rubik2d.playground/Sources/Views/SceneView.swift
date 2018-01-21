@@ -17,7 +17,7 @@ public class SceneView: SKView {
         
         super.init(frame: frame)
         
-        rubikScene.backgroundColor = UIColor(colorLiteralRed: 255/255, green: 220/255, blue: 220/255, alpha: 1)
+        rubikScene.backgroundColor = #colorLiteral(red: 1, green: 0.862745098, blue: 0.862745098, alpha: 1)
         
         presentScene(rubikScene)
         setUpGestureRecognizers()
@@ -29,7 +29,7 @@ public class SceneView: SKView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func swipeGestureRecognizerAction(_ swipeGestureRecognizer: UISwipeGestureRecognizer) {
+    @objc public func swipeGestureRecognizerAction(_ swipeGestureRecognizer: UISwipeGestureRecognizer) {
         
         rubikScene.moveCube(with: swipeGestureRecognizer)
     }
@@ -125,7 +125,7 @@ public class SceneView: SKView {
         solveButton.addTarget(self, action: #selector(SceneView.solveAction(_:)), for: .touchUpInside)
     }
     
-    public func scrambleAction(_ sender: UIButton) {
+    @objc public func scrambleAction(_ sender: UIButton) {
         
         rubikScene.scrambleCube() {
             DispatchQueue.main.async {
@@ -136,7 +136,7 @@ public class SceneView: SKView {
         sender.isEnabled = false
     }
     
-    public func solveAction(_ sender: UIButton) {
+    @objc public func solveAction(_ sender: UIButton) {
         
         rubikScene.solveCube() {
             DispatchQueue.main.async {
