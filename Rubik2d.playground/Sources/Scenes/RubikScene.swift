@@ -65,18 +65,18 @@ public class RubikScene: SKScene {
         }
     }
     
-    public func moveFace(with swipeDirection: UISwipeGestureRecognizerDirection, stickerCoordinates: (row: Int, column: Int), touchedFace: Face) -> Face? {
+    public func moveFace(with swipeDirection: UISwipeGestureRecognizer.Direction, stickerCoordinates: (row: Int, column: Int), touchedFace: Face) -> Face? {
         
         let face: Face?
         switch swipeDirection {
             
-        case UISwipeGestureRecognizerDirection.up, UISwipeGestureRecognizerDirection.down:
+        case .up, .down:
             switch stickerCoordinates.column {
             case 0: face = touchedFace.left
             case 2: face = touchedFace.right
             default: face = nil
             }
-        case UISwipeGestureRecognizerDirection.right, UISwipeGestureRecognizerDirection.left:
+        case .right, .left:
             switch stickerCoordinates.row {
             case 0: face = touchedFace.top
             case 2: face = touchedFace.bottom
@@ -88,30 +88,30 @@ public class RubikScene: SKScene {
         return face
     }
     
-    public func moveMagnitude(with swipeDirection: UISwipeGestureRecognizerDirection, stickerCoordinates: (row: Int, column: Int)) -> Move.Magnitude? {
+    public func moveMagnitude(with swipeDirection: UISwipeGestureRecognizer.Direction, stickerCoordinates: (row: Int, column: Int)) -> Move.Magnitude? {
         
         let magnitude: Move.Magnitude?
         switch swipeDirection {
             
-        case UISwipeGestureRecognizerDirection.up:
+        case .up:
             switch stickerCoordinates.column {
             case 0: magnitude = .counterClockwise
             case 2: magnitude = .clockwise
             default: magnitude = nil
             }
-        case UISwipeGestureRecognizerDirection.down:
+        case .down:
             switch stickerCoordinates.column {
             case 0: magnitude = .clockwise
             case 2: magnitude = .counterClockwise
             default: magnitude = nil
             }
-        case UISwipeGestureRecognizerDirection.right:
+        case .right:
             switch stickerCoordinates.row {
             case 0: magnitude = .counterClockwise
             case 2: magnitude = .clockwise
             default: magnitude = nil
             }
-        case UISwipeGestureRecognizerDirection.left:
+        case .left:
             switch stickerCoordinates.row {
             case 0: magnitude = .clockwise
             case 2: magnitude = .counterClockwise

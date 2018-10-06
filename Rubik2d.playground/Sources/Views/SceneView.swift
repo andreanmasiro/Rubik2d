@@ -40,7 +40,7 @@ public class SceneView: SKView {
             
             let gr = UISwipeGestureRecognizer(target: self, action: #selector(SceneView.swipeGestureRecognizerAction(_:)))
             
-            let swipeDirections: [UISwipeGestureRecognizerDirection] = [.up, .left, .right, .down]
+            let swipeDirections = [UISwipeGestureRecognizer.Direction.up, .left, .right, .down]
             
             gr.direction = swipeDirections[$0]
             
@@ -114,7 +114,7 @@ public class SceneView: SKView {
         solveButton.translatesAutoresizingMaskIntoConstraints = false
         
         scrambleButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
-        scrambleButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
+        scrambleButton.topAnchor.constraint(equalTo: firstBaselineAnchor, constant: 20).isActive = true
         scrambleButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
         
         solveButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
